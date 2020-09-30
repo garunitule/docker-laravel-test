@@ -1,0 +1,32 @@
+version: '3'
+
+services: 
+    app:
+        # ホストのポート番号とコンテナのポート番号を対応させる
+        ports: 
+            - "8080:80"
+        # buildするDockerfileが存在するディレクトリを指定
+        build: ./app
+        # コンテナの名前、かつホスト名、同じdocker-composeに存在するならばホスト名を指定すればアクセスできる
+        container_name: laravel_app
+        # ホストのディレクトリとコンテナのディレクトリを結びつける
+        volumes: 
+            - ./src:/var/www/html
+    db:
+        # ベースとなるimageを指定
+        image: mysql:5.7
+        container_name: laravel_db
+        # 環境変数を設定
+        environment: 
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: laravel_db
+            MYSQL_USER: laravel_user
+            MYSQL_PASSWORD: laravel_pass
+            TZ: 'Asia/Tokyo'
+        # docker-compose upを実行した時に実行されるコマンド。docker runを実行した時には実行されない
+        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        volumes:
+            - ./db/data:/var/lib/mysql
+            - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+        ports:
+            - 3306:3306
