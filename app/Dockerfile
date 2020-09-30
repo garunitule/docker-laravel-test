@@ -22,13 +22,5 @@ RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install npm@latest -g
 
-RUN cd /var/www/html \
-&& composer create-project "laravel/laravel=~7.0" --prefer-dist laravelapp
-
 RUN mv /etc/apache2/mods-available/rewrite.load /etc/apache2/mod-enabled
 RUN /bin/sh -c a2enmod rewrite
-
-RUN cd /var/www/html/laravelapp \
-&& composer require laravel/ui:^2.4 \
-&& php artisan ui react \
-&& npm install && npm run dev

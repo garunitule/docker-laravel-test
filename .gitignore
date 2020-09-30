@@ -1,0 +1,5 @@
+src/laravelapp/vendor
+src/vendor
+src/laravelapp/.env
+src/laravelapp/node_modules
+db/data
