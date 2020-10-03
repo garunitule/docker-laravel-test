@@ -20,3 +20,6 @@ npm install --save react-markdown
 ## axiosをインストール
 cd /var/www/html/laravelapp
 npm install axios --save
+
+## マイグレーション
+php artisan migrate
