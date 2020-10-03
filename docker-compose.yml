@@ -12,6 +12,7 @@ services:
         # ホストのディレクトリとコンテナのディレクトリを結びつける
         volumes: 
             - ./src:/var/www/html
+            - ./app/000-default.conf:/etc/apache2/000-default.conf
         environment: 
             TZ: 'Asia/Tokyo'
     db:
