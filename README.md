@@ -23,3 +23,9 @@ npm install axios --save
 
 ## マイグレーション
 php artisan migrate
+
+## laravel_appコンテナに入る
+docker exec -it laravel_app bash
+
+## laravel_dbコンテナに入る
+docker exec -it laravel_db mysql -u laravel_user -p laravel_db
