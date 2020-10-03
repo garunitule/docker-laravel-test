@@ -15,6 +15,10 @@ libpng-dev \
 libpq-dev \
 && docker-php-ext-install pdo_mysql
 
+RUN apt-get install -y locales \
+&& locale-gen ja_JP.UTF-8 \
+&& echo "export LANG=ja_JP.UTF-8" >> ~/.bashrc
+
 RUN apt-get install -y \
     curl \
     gnupg
