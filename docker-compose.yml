@@ -12,6 +12,8 @@ services:
         # ホストのディレクトリとコンテナのディレクトリを結びつける
         volumes: 
             - ./src:/var/www/html
+        environment: 
+            TZ: 'Asia/Tokyo'
     db:
         # ベースとなるimageを指定
         image: mysql:5.7
