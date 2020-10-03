@@ -14,4 +14,9 @@ php artisan ui react
 npm install && npm run dev
 
 ## マークダウンをHTMLにパースするライブラリインストール
+cd /var/www/html/laravelapp
 npm install --save react-markdown
+
+## axiosをインストール
+cd /var/www/html/laravelapp
+npm install axios --save
