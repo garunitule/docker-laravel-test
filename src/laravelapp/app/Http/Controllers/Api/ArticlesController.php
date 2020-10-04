@@ -4,14 +4,38 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticlesController extends Controller
 {
-    public function get($id)
+    /**
+     * 記事を取得
+     * 
+     * @param int $id 記事ID
+     * 
+     * @return array 記事
+     */
+    public function get(int $id): array
     {
-        $testData = [
-            ["id" => "3", "title" => "baz", "content" => "# This is a header\n\n## This is a second header\n\nAnd this is a paragraph"]
+        $this->article = new Article();
+        $article = $this->article->find($id);
+
+        return [
+            "id" => $article->id,
+            "title" => $article->title,
+            "content" => self::convertIndention($article->content),
         ];
-        return $testData;
+    }
+
+    /**
+     * 改行文字列を改行
+     * 
+     * @param string $content 記事
+     * 
+     * @return string 置換された文字列
+     */
+    private function convertIndention(string $content): string
+    {
+        return preg_replace("/\\\\n/", "\n", $content);
     }
 }

@@ -10,10 +10,13 @@ const ShowArticle = () => {
 
     const getArticle = async () => {
         const data = await axios.get(
-            'http://localhost:8080/api/articles/2', 
+            'http://localhost:8080/api/articles/3'
         );
-        console.log(data.data[0].id);
-        setArticle(data.data[0]["content"]);
+        setArticle(data.data.content);
+        console.log(data);
+        console.log(data.data.content);
+        console.log(data.request.response);
+        console.log(data.data.content === '# This is a header\n\n## This is a second header\n\nAnd this is a paragraph');
     };
 
     useEffect(() => {
