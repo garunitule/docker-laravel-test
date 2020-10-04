@@ -16,4 +16,5 @@ require('./components/Example');
 
 require('./components/common/header');
 
+require('./components/articles/lists');
 require('./components/articles/show');

@@ -73,7 +73,7 @@
         <header>
             <div id="header"></div>
         </header>
-        <div id="article"></div>
+        <div id="articles"></div>
         <script src="{{mix('js/app.js')}}" ></script>
     </body>
 </html>

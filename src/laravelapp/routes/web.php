@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// TODO api.phpにまとめる
 Route::get('/api/articles/{id}', 'Api\ArticlesController@get');
+Route::get('/api/articles', 'Api\ArticlesController@getAll');

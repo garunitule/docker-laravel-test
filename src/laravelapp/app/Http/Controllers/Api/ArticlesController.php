@@ -3,11 +3,25 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 
 class ArticlesController extends Controller
 {
+    /**
+     * 全記事を取得
+     * 
+     * @return array 全記事
+     */
+    public function getAll(): array
+    {
+        $this->article = new Article();
+        $articles = $this->article->orderBy("updated_at", "desc")->get();
+
+        return self::convertArticlesForDisplay($articles);
+    }
+    
     /**
      * 記事を取得
      * 
@@ -26,6 +40,27 @@ class ArticlesController extends Controller
             "content" => self::convertIndention($article->content),
             "updated_at" => $article->updated_at->format("Y年m月d日"),
         ];
+    }
+
+    /**
+     * 全記事を表示用に変換
+     * 
+     * @param Collection $article 全記事を
+     * 
+     * @return array 表示用全記事
+     */
+    private function convertArticlesForDisplay(Collection $articles): array
+    {
+        $articles = $articles->map(function ($article) {
+            $converted_article = [];
+            $converted_article["id"] = $article->id;
+            $converted_article["title"] = $article->title;
+            $converted_article["content"] = self::convertIndention($article->content);
+            $converted_article["updated_at"] = $article->updated_at->format("Y年m月d日");
+            return $converted_article;
+        }, $articles);
+
+        return $articles->all();
     }
 
     /**
