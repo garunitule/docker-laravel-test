@@ -9,6 +9,12 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <!-- css -->
+        <link rel="stylesheet" href="css/main.css">
+
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -63,7 +69,10 @@
             }
         </style>
     </head>
-    <body>
+    <body class="article-container">
+        <header>
+            <div id="header"></div>
+        </header>
         <div id="article"></div>
         <script src="{{mix('js/app.js')}}" ></script>
     </body>

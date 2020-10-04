@@ -24,6 +24,7 @@ class ArticlesController extends Controller
             "id" => $article->id,
             "title" => $article->title,
             "content" => self::convertIndention($article->content),
+            "updated_at" => $article->updated_at->format("Y年m月d日"),
         ];
     }
 

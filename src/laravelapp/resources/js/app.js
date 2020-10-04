@@ -14,4 +14,6 @@ require('./bootstrap');
 
 require('./components/Example');
 
+require('./components/common/header');
+
 require('./components/articles/show');

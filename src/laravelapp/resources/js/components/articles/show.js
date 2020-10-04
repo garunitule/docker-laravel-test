@@ -12,7 +12,7 @@ const ShowArticle = () => {
         const data = await axios.get(
             'http://localhost:8080/api/articles/3'
         );
-        setArticle(data.data.content);
+        setArticle(data.data);
     };
 
     useEffect(() => {
@@ -20,7 +20,13 @@ const ShowArticle = () => {
     },[])
 
     return (
-        <ReactMarkdown source={article} />
+        <React.Fragment>
+            <p>最終投稿日：{article.updated_at}</p>
+            <hr />
+            <h1>{article.title}</h1>
+            <hr />
+             <ReactMarkdown source={article.content} />
+        </React.Fragment>
     );
 };
 
