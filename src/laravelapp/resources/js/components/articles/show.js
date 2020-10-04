@@ -13,10 +13,6 @@ const ShowArticle = () => {
             'http://localhost:8080/api/articles/3'
         );
         setArticle(data.data.content);
-        console.log(data);
-        console.log(data.data.content);
-        console.log(data.request.response);
-        console.log(data.data.content === '# This is a header\n\n## This is a second header\n\nAnd this is a paragraph');
     };
 
     useEffect(() => {
@@ -30,6 +26,5 @@ const ShowArticle = () => {
 
 export default ShowArticle;
 if (document.getElementById('article')) {
-    console.log('test');
     ReactDOM.render(<ShowArticle />, document.getElementById('article'));
 }
