@@ -21,6 +21,9 @@ npm install --save react-markdown
 cd /var/www/html/laravelapp
 npm install axios --save
 
+## react-router-domをインストール
+cd /var/www/html/laravelapp
+
 ## マイグレーション
 php artisan migrate
 
