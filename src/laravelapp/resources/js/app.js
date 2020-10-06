@@ -18,3 +18,5 @@ require('./components/common/header');
 
 require('./components/articles/lists');
 require('./components/articles/show');
+
+require('./components/react-router-dom-test');
