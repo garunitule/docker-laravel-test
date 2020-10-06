@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';    
 
 const RenderRows = ({articles}) => {
@@ -13,7 +12,7 @@ const RenderRows = ({articles}) => {
     });
 };
 
-const Articles = () => {
+const ArticleLists = () => {
     const [articles, setArticles] = useState([
         {
             'id': 1,
@@ -48,7 +47,4 @@ const Articles = () => {
     );
 };
 
-export default Articles;
-if (document.getElementById('articles')) {
-    ReactDOM.render(<Articles />, document.getElementById('articles'));
-}
+export default ArticleLists;

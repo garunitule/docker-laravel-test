@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 
@@ -31,6 +30,3 @@ const ShowArticle = () => {
 };
 
 export default ShowArticle;
-if (document.getElementById('article')) {
-    ReactDOM.render(<ShowArticle />, document.getElementById('article'));
-}

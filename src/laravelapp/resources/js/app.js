@@ -14,9 +14,6 @@ require('./bootstrap');
 
 require('./components/Example');
 
-require('./components/common/header');
+require('./components/common/Header');
 
-require('./components/articles/lists');
-require('./components/articles/show');
-
-require('./components/react-router-dom-test');
+require('./components/Top');

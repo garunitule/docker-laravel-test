@@ -73,8 +73,7 @@
         <header>
             <div id="header"></div>
         </header>
-        <div id="articles"></div>
-        <div id="react"></div>
+        <div id="top"></div>
         <script src="{{mix('js/app.js')}}" ></script>
     </body>
 </html>
