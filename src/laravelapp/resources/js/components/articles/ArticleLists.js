@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';    
+import axios from 'axios';
+import {
+    Link
+  } from "react-router-dom";   
 
 const RenderRows = ({articles}) => {
     return articles.map(article => {
         return (
             <tr key={article.id}>
-                <td><a href={`http://localhost:8080/api/articles/${article.id}`}>{article.title}</a></td>
+                <td><Link to={`article/${article.id}`}>{article.title}</Link></td>
                 <td>{article.updated_at}</td>
             </tr>
         );

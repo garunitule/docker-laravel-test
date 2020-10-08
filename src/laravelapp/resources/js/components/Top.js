@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link, Redirect
+  Link, 
+  Redirect
 } from "react-router-dom";
 
 import ArticleLists from './articles/ArticleLists';
@@ -13,23 +14,13 @@ import ShowArticle from './articles/ShowArticle';
 const Top = () => {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/articles">一覧</Link>
-            </li>
-            <li>
-              <Link to="/article">詳細</Link>
-            </li>
-          </ul>
-        </nav>
+      <header>
+        <Link to="/articles">記事一覧</Link>
+      </header>
         <hr />
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/article">
+          <Route path="/article/:id">
             <ShowArticle />
           </Route>
           <Route exact path="/articles">
@@ -39,7 +30,6 @@ const Top = () => {
             <Redirect to="/articles" />
           </Route>
         </Switch>
-      </div>
     </Router>
   );
 }

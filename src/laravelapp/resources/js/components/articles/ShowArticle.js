@@ -1,15 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
+import {
+    useParams,
+  } from 'react-router-dom';
 
 // TODO idをpropとして持つようにする
 // idは一覧表示コンポーネントから渡すようにする
 const ShowArticle = () => {
+    const { id } = useParams();
     const [article, setArticle] = useState('');
 
     const getArticle = async () => {
         const data = await axios.get(
-            'http://localhost:8080/api/articles/3'
+            `http://localhost:8080/api/articles/${id}`
         );
         setArticle(data.data);
     };
