@@ -17,6 +17,9 @@ const Top = () => {
         <nav>
           <ul>
             <li>
+              <Link to="/">一覧</Link>
+            </li>
+            <li>
               <Link to="/articles">一覧</Link>
             </li>
             <li>
@@ -24,6 +27,7 @@ const Top = () => {
             </li>
           </ul>
         </nav>
+        <hr />
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -33,6 +37,9 @@ const Top = () => {
           </Route>
           <Route path="/article">
             <ShowArticle />
+          </Route>
+          <Route>
+            <ArticleLists />
           </Route>
         </Switch>
       </div>

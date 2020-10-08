@@ -70,9 +70,6 @@
         </style>
     </head>
     <body class="article-container">
-        <header>
-            <div id="header"></div>
-        </header>
         <div id="top"></div>
         <script src="{{mix('js/app.js')}}" ></script>
     </body>

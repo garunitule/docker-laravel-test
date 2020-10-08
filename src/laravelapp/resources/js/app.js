@@ -14,6 +14,4 @@ require('./bootstrap');
 
 require('./components/Example');
 
-require('./components/common/Header');
-
 require('./components/Top');
