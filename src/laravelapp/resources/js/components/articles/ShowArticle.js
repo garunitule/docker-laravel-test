@@ -13,7 +13,7 @@ const ShowArticle = () => {
 
     const getArticle = async () => {
         const data = await axios.get(
-            `http://localhost:8080/api/articles/${id}`
+            `http://localhost/api/articles/${id}`
         );
         setArticle(data.data);
     };

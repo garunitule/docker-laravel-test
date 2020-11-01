@@ -80033,7 +80033,7 @@ var ArticleLists = function ArticleLists() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost:8080/api/articles');
+              return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://localhost/api/articles');
 
             case 2:
               data = _context.sent;
@@ -80129,7 +80129,7 @@ var ShowArticle = function ShowArticle() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("http://localhost:8080/api/articles/".concat(id));
+              return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("http://localhost/api/articles/".concat(id));
 
             case 2:
               data = _context.sent;
