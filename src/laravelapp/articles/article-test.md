@@ -1,4 +1,4 @@
-# docker-laravel-test
+docker-laravel-test
 
 docker-compose buildしたら以下のコマンドを実行してlaravelプロジェクトを作成して、reactをのせる
 
@@ -23,19 +23,6 @@ npm install axios --save
 
 ## react-router-domをインストール
 cd /var/www/html/laravelapp
-npm install react-router-dom
-
-## markdown-loaderをインストール
-cd /var/www/html/laravelapp
-npm install markdown-loader
-
-## package.jsonの更新用ライブラリ
-cd /var/www/html/laravelapp
-npm i -g npm-check-updates
-
-## package.jsonの更新
-ncu -u
-npm install
 
 ## マイグレーション
 php artisan migrate

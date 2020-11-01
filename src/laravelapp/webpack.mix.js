@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const marked = require("marked");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +12,22 @@ const mix = require('laravel-mix');
  |
  */
 
+const renderer = new marked.Renderer();
 mix.react('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .webpackConfig({
+        module: {
+            rules: [{
+                test: /\.md$/,
+                use: [{
+                    loader: 'html-loader'
+                }, {
+                    loader: 'markdown-loader',
+                    options: {
+                        pedantic: true,
+                        renderer
+                    }
+                }]
+            }]
+        }
+    });
