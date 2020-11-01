@@ -13,7 +13,7 @@ const ShowArticle = () => {
 
     const getArticle = async () => {
         const data = await axios.get(
-            `http://localhost/api/articles/${id}`
+            window.location.origin + `/api/articles/${id}`
         );
         setArticle(data.data);
     };

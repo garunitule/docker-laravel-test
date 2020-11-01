@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {
-    Link
+    Link,
   } from "react-router-dom";   
 
 const RenderRows = ({articles}) => {
@@ -26,7 +26,7 @@ const ArticleLists = () => {
 
     const getArticles = async () => {
         const data = await axios.get(
-            'http://localhost/api/articles'
+            window.location.origin + '/api/articles'
         );
         setArticles(data.data);
     };
